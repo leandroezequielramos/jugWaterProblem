@@ -2,5 +2,6 @@ FROM python:3.10-slim
 
 ADD ./test/test_requirements.txt /tmp/test_requirements.txt
 ADD ./src/wjp_lib/requirements.txt /tmp/cli_requirements.txt
-RUN pip install -U pip && pip install -r /tmp/test_requirements.txt && pip install -r /tmp/cli_requirements.txt && rm -r /tmp
+ADD ./src/api/requirements.txt /tmp/api_requirements.txt
+RUN pip install -U pip && pip install -r /tmp/test_requirements.txt && pip install -r /tmp/cli_requirements.txt && pip install -r /tmp/api_requirements.txt && rm -r /tmp
 USER ${USER}
