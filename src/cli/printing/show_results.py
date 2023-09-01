@@ -24,7 +24,6 @@ def print_results(
     target: int,
     steps: Optional[List[Step]],
 ):
-    print("Water jug problem")
     print(f"Jug 1 capacity: {jug1_capacity} Gallons")
     print(f"Jug 2 capacity: {jug2_capacity} Gallons")
     print(f"Desidered target: {target} Gallons")
