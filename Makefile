@@ -20,7 +20,7 @@ build_test:
 	docker build -t ${TEST_IMAGE} -f docker/Dockerfile_test .
 
 run_test:
-	docker run --rm -v $(PWD)/src/wjp_lib:/src -v $(PWD)/test/cli:/test -e PYTHONPATH=/src $TEST_IMAGE py.test  /test
+	docker run --rm -v $(PWD)/src/wjp_lib:/src -v $(PWD)/test/cli:/test -e PYTHONPATH=/src ${TEST_IMAGE} py.test -s  /test
 
 clean:
 	docker rmi ${CLI_IMAGE}
