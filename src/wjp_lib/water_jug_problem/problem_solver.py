@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 from water_jug_problem.math import gcd
 from water_jug_problem.schemas import Step, ActionLabel, Action, State
 from water_jug_problem.constants import (
