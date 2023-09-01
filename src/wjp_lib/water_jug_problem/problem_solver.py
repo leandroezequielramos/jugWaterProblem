@@ -1,12 +1,9 @@
 from typing import List, Optional
+
+from water_jug_problem.constants import (EMPTY_JUG_CANT, JUG1_POS, JUG2_POS,
+                                         JUGS_NUM)
 from water_jug_problem.math import gcd
-from water_jug_problem.schemas import Step, ActionLabel, Action, State
-from water_jug_problem.constants import (
-    EMPTY_JUG_CANT,
-    JUG1_POS,
-    JUG2_POS,
-    JUGS_NUM,
-)
+from water_jug_problem.schemas import Action, ActionLabel, State, Step
 
 
 def _water_jug_problem_has_solution(

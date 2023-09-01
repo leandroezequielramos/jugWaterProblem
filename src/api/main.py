@@ -1,10 +1,11 @@
 """Application main module."""
 from typing import List
+
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import conint
-from water_jug_problem.schemas import Step
 from water_jug_problem import water_jug_solver
+from water_jug_problem.schemas import Step
 
 VERSION = "0.1.0"
 

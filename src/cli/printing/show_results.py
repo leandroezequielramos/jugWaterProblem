@@ -1,6 +1,7 @@
 """functions to show water jug problem results"""
 from typing import List, Optional
-from water_jug_problem.schemas import Step, State, Action, ActionLabel
+
+from water_jug_problem.schemas import Action, ActionLabel, State, Step
 
 
 def _step_to_str(step: Step) -> str:
