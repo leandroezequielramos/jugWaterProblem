@@ -12,6 +12,23 @@ from water_jug_problem.constants import (
 def _water_jug_problem_has_solution(
     jug_capacity_1: int, jug_capacity_2: int, target: int
 ) -> bool:
+    """
+    checks if water jug problem has solution for a defined input
+
+    Parameters
+    ----------
+    jug_capacity_1 : int
+        jug 1 capacity
+    jug_capacity_2 : int
+        jug 2 capacity
+    target : int
+        desidered target
+
+    Returns
+    -------
+    bool
+        True if problem has solution, False otherwise
+    """
     assert jug_capacity_1 >= 0 and jug_capacity_2 >= 0 and target >= 0
     jugs_gcd = gcd(jug_capacity_1, jug_capacity_2)
     return (
@@ -23,6 +40,25 @@ def _water_jug_problem_has_solution(
 def water_jug_solver_from(
     jug_capacity_1: int, jug_capacity_2: int, target: int, start_jug: int
 ) -> List[Step]:
+    """
+    Solves water jug problem assuming to start filling jug 'start_jug'
+
+    Parameters
+    ----------
+    jug_capacity_1 : int
+        jug 1 capacity
+    jug_capacity_2 : int
+        jug 2 capacity
+    target : int
+        desidered target
+    start_jug : int
+        jug to start with
+
+    Returns
+    -------
+    List[Step]
+        List of required stepts to reach solution
+    """
     steps = []
     jugs = [EMPTY_JUG_CANT, EMPTY_JUG_CANT]
     capacities = [jug_capacity_1, jug_capacity_2]
@@ -82,6 +118,30 @@ def water_jug_solver_from(
 def water_jug_solver(
     jug_capacity_1: int, jug_capacity_2: int, target: int
 ) -> Optional[List[Step]]:
+    """
+    Solves water jug problem for a jug 1 capacity, jug 2 capacity and desidered
+    target 'target'. Returns None if problem hasn't solution
+
+    Parameters
+    ----------
+    jug_capacity_1 : int
+        jug 1 capacity
+    jug_capacity_2 : int
+        jug 2 capacity
+    target : int
+        desidered target
+
+    Returns
+    -------
+    Optional[List[Step]]
+        None if problem hasn't solution otherwise returns the list of steps
+        to reach the solution
+
+    Raises
+    ------
+    ValueError
+        When input are lower than zero
+    """
     steps = None
     if jug_capacity_1 < 0 or jug_capacity_2 < 0 or target < 0:
         raise ValueError("Jugs capacities and target must be positive values")
