@@ -1,0 +1,9 @@
+FROM python:3.10-slim
+
+RUN pip install -U pip && pip install setuptools
+ADD ./src/wjp_lib /tmp
+ADD ./src/cli /src
+RUN cd /tmp && pip install -r requirements.txt && pip install .
+RUN cp /src/water_jug_solver /bin && chmod +x /bin/water_jug_solver
+ENV PYTHONPATH="$PYTHONPATH:/src"
+CMD ["water_jug_solver"]

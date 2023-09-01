@@ -1,4 +1,4 @@
-#! /bin/python3
+#! /usr/local/bin/python3
 import sys
 from printing import print_results
 from water_jug_problem import water_jug_solver
@@ -25,7 +25,7 @@ def main():
             steps=steps,
         )
     except Exception as e:
-        sys.stderr.write(f"{e}\n")
+        sys.stderr.write(f"ERROR: {e}\n")
         sys.exit(1)
 
 

@@ -8,8 +8,7 @@ setup(
     description="Library to solve water two water jugs problem",
     author="Leandro ramos",
     license="MIT",
-    install_requires=[],
-    setup_requires=["pydantic==2.3.0"],
+    install_requires=["pydantic==2.3.0"],
     tests_require=["pytest==7.4.0"],
     test_suite="tests",
 )
