@@ -5,6 +5,19 @@ from water_jug_problem.schemas import Action, ActionLabel, State, Step
 
 
 def _step_to_str(step: Step) -> str:
+    """
+    converts a step in a str
+
+    Parameters
+    ----------
+    step : Step
+        step to convert
+
+    Returns
+    -------
+    str
+        step string representation
+    """
     to_jug = 1 if step.action.jug_from == 2 else 2
     action_str = (
         f"{step.action.action_label} {step.action.moved_cant} "
@@ -25,6 +38,20 @@ def print_results(
     target: int,
     steps: Optional[List[Step]],
 ):
+    """
+    prints solution in command line
+
+    Parameters
+    ----------
+    jug1_capacity : int
+        jug 1 capacity
+    jug2_capacity : int
+        jug2 capacity
+    target : int
+        target
+    steps : Optional[List[Step]]
+        steps to reach solution or None if hasn't solution
+    """
     print(f"Jug 1 capacity: {jug1_capacity} Gallons")
     print(f"Jug 2 capacity: {jug2_capacity} Gallons")
     print(f"Desidered target: {target} Gallons")
