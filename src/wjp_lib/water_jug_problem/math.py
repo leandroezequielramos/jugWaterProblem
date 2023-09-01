@@ -1,5 +1,6 @@
 """holds math functions"""
 
+
 def gcd(a: int, b: int) -> int:
     """
     greater common divisor of two numbers a and b
@@ -9,14 +10,15 @@ def gcd(a: int, b: int) -> int:
     a : int
         first number
     b : int
-        second number_
+        second number
 
     Returns
     -------
     int
        greater common divisor of a and b
     """
-    assert(a >=0 and b >= 0)
+    if a <= 0 or b <= 0:
+        raise ValueError("Values must be greater than zero")
     while b != 0:
         a, b = b, a % b
     return a

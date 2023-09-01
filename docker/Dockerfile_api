@@ -1,0 +1,9 @@
+FROM python:3.10-slim
+
+RUN pip install -U pip && pip install setuptools
+ADD ./src/wjp_lib /tmp
+RUN cd /tmp && pip install -r requirements.txt && pip install .
+ADD ./src/api /src
+RUN cd /src && pip install -r requirements.txt 
+WORKDIR /src
+CMD ["uvicorn", "--host", "0.0.0.0", "main:app" ]

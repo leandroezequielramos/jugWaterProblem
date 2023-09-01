@@ -86,7 +86,9 @@ def water_jug_solver(
     if jug_capacity_1 < 0 or jug_capacity_2 < 0 or target < 0:
         raise ValueError("Jugs capacities and target must be positive values")
 
-    if _water_jug_problem_has_solution(
+    if target == 0:
+        steps = []
+    elif _water_jug_problem_has_solution(
         jug_capacity_1=jug_capacity_1,
         jug_capacity_2=jug_capacity_2,
         target=target,
